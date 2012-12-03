@@ -1,0 +1,26 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    faraday (0.8.4)
+      multipart-post (~> 1.1)
+    hashie (1.2.0)
+    hpricot (0.8.4)
+    multi_json (1.4.0)
+    multipart-post (1.1.5)
+    nokogiri (1.5.0)
+    sanitize (2.0.3)
+      nokogiri (>= 1.4.4, < 1.6)
+    simple_oauth (0.1.9)
+    twitter (4.4.0)
+      faraday (~> 0.8)
+      multi_json (~> 1.3)
+      simple_oauth (~> 0.1.6)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  hashie
+  hpricot
+  sanitize
+  twitter (>= 4.0.0)

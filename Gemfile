@@ -1,0 +1,6 @@
+source :rubygems
+
+gem 'twitter', '>= 4.0.0'
+gem 'hashie'
+gem 'sanitize'
+gem 'hpricot'
