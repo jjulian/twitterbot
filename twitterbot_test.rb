@@ -5,7 +5,18 @@ require 'twitterbot'
 class TwitterbotTest < Test::Unit::TestCase
   def setup
     Twitter.stubs(:update)
+    @orig_stderr = $stderr
+    @orig_stdout = $stdout
+    $stderr = $stdout = File.new('/dev/null', 'w')
   end
+
+  def teardown
+    $stderr = @orig_stderr
+    $stdout = @orig_stdout
+    @orig_stderr = @orig_stdout = nil
+    super
+  end
+
   def test_returns_the_tweet
     text = "My snarky comment."
     result = Twitterbot.tweet { text }
