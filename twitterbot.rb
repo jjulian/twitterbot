@@ -6,6 +6,7 @@ class Twitterbot
   # Requires a block that returns the text to tweet, which will be trimmed to 140 chars.
   def self.tweet(options={})
     text = yield
+    raise ArgumentError.new("yield produced nil") unless text
     text = text.slice(0..139)
     perform text, options
   end

@@ -11,6 +11,9 @@ class TwitterbotTest < Test::Unit::TestCase
     result = Twitterbot.tweet { text }
     assert result == text, "should return the tweet text"
   end
+  def test_raises_if_no_text
+    assert_raises(ArgumentError) { result = Twitterbot.tweet { nil } }
+  end
   def test_trims_text_at_140_chars
     text = 'X' * 200
     result = Twitterbot.tweet { text }
